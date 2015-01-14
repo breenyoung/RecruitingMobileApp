@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title></title>
+		<!-- Version 1.0 -->
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="apple-touch-icon" href="/iPad/recruitment/iConCompV3.png"/>
+		<link rel="apple-touch-startup-image" href="/iPad/recruitment/iConCompV3.png"/>
+
+		<link rel="stylesheet" href="/iPad/recruitment/css/jquery.mobile-1.0.1.min.css" />
+		<link rel="stylesheet" href="/iPad/recruitment/css/fancybox/jquery.fancybox.css" type="text/css" />
+		<link rel="stylesheet" href="/iPad/recruitment/css/gritter/jquery.gritter.css" type="text/css" />
+		<link rel="stylesheet" href="/iPad/recruitment/css/nscc.mobile.programguide.css" />
+		<link rel="stylesheet" href="/iPad/recruitment/css/style.css" />
+
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/json2.js"></script>			
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/jquery.gritter.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/jquery.mobile.router.min.js"></script>
+		
+		<!-- To be able to attach to 'mobileinit' event, your script must preceed the actual jqmobile script -->
+		<script type="text/javascript">
+			$(document).bind("mobileinit", function()
+			{
+				$.event.special.swipe.horizontalDistanceThreshold = 130; // In pixels
+				//$.mobile.touchOverflowEnabled = true;
+			});	
+			
+		</script>		
+		
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/jquery.mobile-1.0.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/nscc.mobile.programguide.websql.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/nscc.mobile.programguide.data.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/nscc.mobile.programguide.utility.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/nscc.mobile.programguide.logic.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/iPad/recruitment/js/nscc.mobile.programguide.routes.js"></script>
+
+		<!-- Fixes 1px jump in header -->
+		<script type="text/javascript">
+		  $(function() { 
+			$.mobile.defaultHomeScroll = 0;
+		  });
+		</script>
+	</head>
+
+
+	<body>
+
+		<!-- =============================================== -->
+		<!-- Splash Page -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="splashPage" data-title="NSCC Program Guide">
+						
+			<!-- Content -->
+			<div data-role="content">			
+				
+				<div class="splash"><!--<img src="/iPad/recruitment/img/spacer.gif" alt="NSCC" />--></div>
+								
+			</div>				
+						
+		</div>
+		<!-- =============================================== -->
+
+
+		<!-- =============================================== -->
+		<!-- Landing Page -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="landingPage" data-title="NSCC Program Guide">
+				<header class="top" data-position="fixed" data-fullscreen="true">
+					<h1>NSCC Programs</h1>
+					<a href="#" id="hlSearch" class="search-btn">Search</a>
+				</header>			
+			<div class="clear headerfix"></div>
+			<!-- Content -->
+			<div data-role="content" class="list-wrapper">			
+
+			<h2 class="list-hdr">2013/2014</h2>
+
+			<ul class="gal-index">
+				<li><div class="gal-caption"><h3>Waterfront Campus</h3><ul class="school-blocks"><li class="orange"></li><li class="yellow"></li><li class="green"></li><li class="red"></li><li class="blue"></li></ul></div><a href="#searchResults?type=L&query=WATER" data-transition="none"><img src="/iPad/recruitment/img/landing/01.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Culinary Arts</h3><ul class="school-blocks"><li class="green"></li></ul></div><a href="#programDetails?progid=CULA&planid=CULINARTS" data-transition="none"><img src="/iPad/recruitment/img/landing/02.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Photography</h3><ul class="school-blocks"><li class="orange"></li></ul></div><a href="#programDetails?progid=PHOTD&planid=PHOTODIGI" data-transition="none"><img src="/iPad/recruitment/img/landing/03.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Music Arts</h3><ul class="school-blocks"><li class="orange"></li></ul></div><a href="#programDetails?progid=MARTS&planid=MUSARTS" data-transition="none"><img src="/iPad/recruitment/img/landing/04.jpg" alt="" /></a></li>
+				<li class="double"><div class="gal-caption"><h3>Practical<br />Nursing</h3><ul class="school-blocks"><li class="red"></li></ul></div><a href="#programDetails?progid=PNUR&planid=PRACNURDIP" data-transition="none"><img src="/iPad/recruitment/img/landing/05.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Carpentry</h3><ul class="school-blocks"><li class="yellow"></li></ul></div><a href="#programDetails?progid=CARD&planid=CARPENTDIP" data-transition="none"><img src="/iPad/recruitment/img/landing/06.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Welding</h3><ul class="school-blocks"><li class="yellow"></li></ul></div><a href="#programDetails?progid=WLDD&planid=WELDINGDIP" data-transition="none"><img src="/iPad/recruitment/img/landing/07.jpg" alt="" /></a></li>
+				<li><div class="gal-caption"><h3>Electrical</h3><ul class="school-blocks"><li class="yellow"></li></ul></div><a href="#programDetails?progid=ELCI&planid=ELECONIN" data-transition="none"><img src="/iPad/recruitment/img/landing/08.jpg" alt="" /></a></li>
+			</ul>
+
+			</div>				
+			<div class="clear footerfix"></div>
+			<!-- Footer -->
+			<footer data-position="fixed" data-fullscreen="true">
+			<ul class="icn-nav">
+				<li><a href="#landingPage" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-home.png" alt="" id="home" /></a></li>
+				<li><a href="#programsAtoZ" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-az.png" alt="" id="az" /></a></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-comment.png" alt="" id="comment" /></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-share.png" alt="" id="share" /></a></li>
+				<li><a href="#" id="updateData"><img src="/iPad/recruitment/img/designelements/btn-refresh.png" alt="" id="updateData"/></a></li>
+			</ul>
+			</footer>		
+			
+		</div>
+		<!-- =============================================== -->
+
+
+		<!-- =============================================== -->
+		<!-- Program Details -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="programDetails" data-title="NSCC Program Guide - Program Details">
+
+			<!-- Header -->
+			<header class="top" data-position="fixed" data-fullscreen="true">
+				<h1>NSCC Programs</h1>
+				<a href="#" id="hlSearch" class="search-btn">Search</a>
+			</header>			
+			<div class="clear headerfix"></div>
+			<!-- Content -->
+			<div data-role="content" class="list-wrapper">		
+
+				<section class="prog-info">
+				<div class="prog-img"><img id="detailHeaderImage" src="/iPad/recruitment/img/accents/placeholder.jpg"/></div>
+					<span id="detailVideoLink" class="btn-more"></span><div id="detailVideoPopup" style="display:none;"></div>
+				<div id="detailProgSchool" class="detailItem">
+				</div>
+				<div class="clear"></div>
+				<ul class="quick-facts">
+					<li id="detailDuration" class="detailItem">3 Years</li>
+					<li id="detailCredential" class="detailItem">Advanced Diploma</li>
+					<li id="detailStartDate" class="detailItem">September Start</li>
+					<li id="detailTuition" class="detailItem">$2,865/Year</li>
+				</ul>
+
+				<div class="tagline detailItem" id="detailTagline">Study the major principles of marine navigation, seamanship, meteorology, ship construction and stability, and prepare for a career as a ship's deck officer.</div>
+
+				<ul class="admission-reqs">
+					<li>Admission Requirements</li>
+					<li id="detailAdmissionRequirements" class="detailItem"></li>
+				</ul>
+				<div class="clear"></div>
+				</section>
+							
+				<section class="prog-highlights">
+				<h1>Student Highlights</h1>
+				<ol class="num-highlights">
+					<li class="ph-one detailItem" id="detailHighlight1"></li>
+					<li class="ph-two detailItem" id="detailHighlight2"></li>
+					<li class="ph-three detailItem" id="detailHighlight3"></li>
+				</ol>
+
+					<ul class="prog-gallery" id="detailImageThumbs"></ul>
+				</section>
+							
+				<section class="locations">
+				<div>
+				<h1>Locations</h1>
+				<ul class="">
+					<li id="detailLocations" class="detailItem"></li>
+				</ul>
+				</div>
+				<div id="detailMapLink" class="detailItem"></div>
+				</section>
+
+			</div>
+			<div class="clear footerfix"></div>
+			<!-- Footer -->
+			<footer data-position="fixed" data-fullscreen="true">
+			<ul class="icn-nav">
+				<li><a href="#landingPage" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-home.png" alt="" id="home" /></a></li>
+				<li><a href="#programsAtoZ" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-az.png" alt="" id="az" /></a></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-comment.png" alt="" id="comment" /></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-share.png" alt="" id="share" /></li>
+			</ul>
+			</footer>		
+
+
+		</div>
+		<!-- =============================================== -->
+
+		<!-- =============================================== -->
+		<!-- Programs A-Z page -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="programsAtoZ" data-title="NSCC Program Guide - Programs A-Z">
+				<header class="top" data-position="fixed" data-fullscreen="true">
+					<h1>NSCC Programs</h1>
+					<a href="#" id="hlSearch" class="search-btn">Search</a>
+				</header>
+				<div class="clear headerfix"></div>
+			<!-- Content -->
+			
+				<div class="srch-az"><span class="results"><strong>Search Results:</strong> Programs A-Z</span><span class="srch-az-num">(158 Programs)</span></div>
+				<ul class="az-group">
+					<li><a href="#abc">abc</a></li>
+					<li><a href="#def">def</a></li>
+					<li><a href="#ghi">ghi</a></li>
+					<li><a href="#jkl">jkl</a></li>
+					<li><a href="#mno">mno</a></li>
+					<li><a href="#pqr">pqr</a></li>
+					<li><a href="#stu">stu</a></li>
+					<li><a href="#vwx">vwx</a></li>
+					<li><a href="#yz">yz</a></li>
+				</ul>			
+			
+			<div data-role="content">			
+
+
+				
+				<div class="az-container">
+					<ul class="az-list">
+						<li class="letters"><a name="abc"></a><div>abc</div></li>
+	<li class="SCACr"><a href="#programDetails?progid=ACC&planid=ACCONNECT" data-transition="none"><img src="/iPad/recruitment/img/accents/ACCONNECT_5.jpg" /><h2 class="SCAC">Academic &amp; Career Connections</h2><p>Start your career and education with the right<span class="hide"> foundation</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=ADCO&planid=ADDICO" data-transition="none"><img src="/iPad/recruitment/img/accents/ADDICO_5.jpg" /><h2 class="HEHS">Addictions Community Outreach</h2><p>Get the knowledge and skills required to work as<span class="hide"> an</span>...</p></a></li>
+	<li class="SCACr"><a href="#programDetails?progid=ALP&planid=ADLTLRNING" data-transition="none"><img src="/iPad/recruitment/img/accents/ADLTLRNING_5.jpg" /><h2 class="SCAC">Adult Learning Program</h2><p>Complete your High School Graduation Diploma for<span class="hide"> Adults</span><span class="show">..</span>.</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=AMEE&planid=AIRMAINAVS" data-transition="none"><img src="/iPad/recruitment/img/accents/AIRMAINAVS_5.jpg" /><h2 class="TRTE">Aircraft Maintenance Engineer (Avionics)</h2><p><span class="hide">Develop skills for the repair and maintenance of complex...</span></p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=AIRE&planid=AIRMAINENG" data-transition="none"><img src="/iPad/recruitment/img/accents/AIRMAINENG_5.jpg" /><h2 class="TRTE">Aircraft Maintenance Engineer (Mechanical)</h2><p><span class="hide">Learn how to repair and maintain airframes, engines, and...</span></p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=AMES&planid=AIRMAINSTR" data-transition="none"><img src="/iPad/recruitment/img/accents/AIRMAINSTR_5.jpg" /><h2 class="TRTE">Aircraft Maintenance Engineer (Structures)</h2><p><span class="hide">Develop skills to inspect, disassemble and reassemble...</span></p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=ASLA&planid=AMSIGNLANG" data-transition="none"><img src="/iPad/recruitment/img/accents/AMSIGNLANG_5.jpg" /><h2 class="AANM">American Sign Language/English Interpretation</h2><p>Be a conduit for the hearing and non-hearing<span class="hide"> worlds</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AMCA&planid=MEDCOMARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/MEDCOMARTS_5.jpg" /><h2 class="AANM">Applied Media &amp; Communication Arts</h2><p>Explore and discover the possibilities of visual...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=AETE&planid=ARCHENGTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/ARCHENGTCN_5.jpg" /><h2 class="TRTE">Architectural Engineering Technician</h2><p>Learn all aspects of sustainable building<span class="hide"> design, construction</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=AUCO&planid=AUTOCOLREP" data-transition="none"><img src="/iPad/recruitment/img/accents/AUTOCOLREP_5.jpg" /><h2 class="TRTE">Automotive Collision Repair &amp; Refinishing</h2><p>Learn to repair and refinish collision-damaged<span class="hide"> vehicles</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ASRP&planid=AUTOSERVRE" data-transition="none"><img src="/iPad/recruitment/img/accents/AUTOSERVRE_5.jpg" /><h2 class="TRTE">Automotive Service &amp; Repair</h2><p>Learn many aspects of mechanical motor vehicle...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ASAP&planid=AUTOSRVAD" data-transition="none"><img src="/iPad/recruitment/img/accents/AUTOSRVAD_5.jpg" /><h2 class="TRTE">Automotive Service Advisor</h2><p>Prepare for a challenging and rewarding career that...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BPAT&planid=BAKPASTART" data-transition="none"><img src="/iPad/recruitment/img/accents/BAKPASTART_5.jpg" /><h2 class="BUHS">Baking &amp; Pastry Art</h2><p>Enhance your skills in baking and pastry and<span class="hide"> get your start in a</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=BIAD&planid=BEHAVINTER" data-transition="none"><img src="/iPad/recruitment/img/accents/BEHAVINTER_5.jpg" /><h2 class="HEHS">Behavioural Interventions</h2><p>Get the specialized skills you need to support<span class="hide"> clients with</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BOBA&planid=BOULANGER" data-transition="none"><img src="/iPad/recruitment/img/accents/BOULANGER_5.jpg" /><h2 class="BUHS">Boulanger &amp; Baking Art</h2><p>Learn the chemistry, history, and art of bread<span class="hide"> making</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=BRICK&planid=BRICKLAYIN" data-transition="none"><img src="/iPad/recruitment/img/accents/BRICKLAYIN_5.jpg" /><h2 class="TRTE">Bricklaying Masonry</h2><p>Learn to safely construct decorative and load<span class="hide">-bearing</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=BSVT&planid=BLDSYSTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/BLDSYSTCN_5.jpg" /><h2 class="TRTE">Building Systems Technician (HVAC&amp;R)</h2><p>Develop your skills and knowledge of heating...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BUSADM-YR1" data-transition="none"><img src="/iPad/recruitment/img/accents/BUSADM-YR1_5.jpg" /><h2 class="BUHS">Business Administration</h2><p>Prepare for a full range of opportunities in business...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BA-ACCOUNT" data-transition="none"><img src="/iPad/recruitment/img/accents/BA-ACCOUNT_5.jpg" /><h2 class="BUHS">Business Administration - Accounting Concentration</h2><p class="hide">Learn the day-to-day and computerized functions of...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BA-FINSERV" data-transition="none"><img src="/iPad/recruitment/img/accents/BA-FINSERV_5.jpg" /><h2 class="BUHS">Business Administration - Financial Services Concentration</h2><p class="hide">Discover how banking, insurance, and financial planning fit...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BA-MANAGE" data-transition="none"><img src="/iPad/recruitment/img/accents/BA-MANAGE_5.jpg" /><h2 class="BUHS">Business Administration - Management Concentration</h2><p class="hide">Learn how real-life managers keep their companies moving...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BA-MARKET" data-transition="none"><img src="/iPad/recruitment/img/accents/BA-MARKET_5.jpg" /><h2 class="BUHS">Business Administration - Marketing Concentration</h2><p class="hide">Learn how to develop and apply marketing strategies, sales...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BUSADM-YR2" data-transition="none"><img src="/iPad/recruitment/img/accents/BUSADM-YR2_5.jpg" /><h2 class="BUHS">Business Administration - Open Concentration</h2><p class="hide">Gain a wide breadth of skills by choosing a variety of courses...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=BADM&planid=BA-SIMGMT" data-transition="none"><img src="/iPad/recruitment/img/accents/BA-SIMGMT_5.jpg" /><h2 class="BUHS f1em">Business Administration - Software &amp; Information Management Concentration</h2></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=CABC&planid=CABCARP" data-transition="none"><img src="/iPad/recruitment/img/accents/CABCARP_5.jpg" /><h2 class="TRTE">Cabinetmaking</h2><p>Learn all aspects of cabinetmaking<span class="hide"> &ndash; identifying</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=DRAM&planid=DRAFTINGME" data-transition="none"><img src="/iPad/recruitment/img/accents/DRAFTINGME_5.jpg" /><h2 class="TRTE">CAD Technician - Mechanical</h2><p>Translate the ideas and sketches of designers<span class="hide"> and engineers into</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=CARD&planid=CARPENTDIP" data-transition="none"><img src="/iPad/recruitment/img/accents/CARPENTDIP_5.jpg" /><h2 class="TRTE">Carpentry</h2><p>Learn all aspects of carpentry from<span class="hide"> construction safety and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=CETG&planid=CIVENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/CIVENGTECH_5.jpg" /><h2 class="TRTE">Civil Engineering Technology</h2><p>Help build a sustainable world and expand your<span class="hide"> knowledge of</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=CORW&planid=COMDISABSP" data-transition="none"><img src="/iPad/recruitment/img/accents/COMDISABSP_5.jpg" /><h2 class="HEHS">Community Disability Supports</h2><p>Make a real and lasting difference helping others<span class="hide"> lead full and</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=CETN&planid=COMELECTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/COMELECTCN_5.jpg" /><h2 class="AANM">Computer Electronics Technician</h2><p>Build your knowledge of computer hardware<span class="hide">, software, networks</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=CMTG&planid=CONSTMGTD" data-transition="none"><img src="/iPad/recruitment/img/accents/CONSTMGTD_5.jpg" /><h2 class="TRTE">Construction Management Technology</h2><p>Learn the principles and practices used to<span class="hide"> manage construction</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HHCR&planid=CONTCARE" data-transition="none"><img src="/iPad/recruitment/img/accents/CONTCARE_5.jpg" /><h2 class="HEHS">Continuing Care</h2><p>Become a competent and compassionate care<span class="hide"> worker</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=COOK&planid=COOKING" data-transition="none"><img src="/iPad/recruitment/img/accents/COOKING_5.jpg" /><h2 class="BUHS">Cooking</h2><p>Immerse yourself in the fast-paced world of the<span class="hide"> commercial</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=COSM&planid=COSMETOL" data-transition="none"><img src="/iPad/recruitment/img/accents/COSMETOL_5.jpg" /><h2 class="HEHS">Cosmetology</h2><p>Enhance the beauty and well-being of others by<span class="hide"> learning all</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=CULA&planid=CULINARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/CULINARTS_5.jpg" /><h2 class="BUHS">Culinary Arts</h2><p>Learn fundamental techniques of cooking<span class="hide"> and presentation and</span>...</p></a></li>
+						<li class="letters"><a name="def"></a><div>def</div></li>
+	<li class="AANMr"><a href="#programDetails?progid=ASLDC&planid=DEAFSTDIES" data-transition="none"><img src="/iPad/recruitment/img/accents/DEAFSTDIES_5.jpg" /><h2 class="AANM">Deaf Studies</h2><p>Learn American Sign Language and build<span class="hide"> your understanding</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=DASG&planid=DENTALASII" data-transition="none"><img src="/iPad/recruitment/img/accents/DENTALASII_5.jpg" /><h2 class="HEHS">Dental Assisting - Level II</h2><p>Promote good oral health and patient care<span class="hide"> assisting dentists</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=DRIM&planid=DIREPINMAR" data-transition="none"><img src="/iPad/recruitment/img/accents/DIREPINMAR_5.jpg" /><h2 class="TRTE">Diesel Repair &ndash; Industrial &amp; Marine</h2><p>Learn to maintain and repair industrial and<span class="hide"> marine diesel</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=DIAN&planid=DIGIANIM" data-transition="none"><img src="/iPad/recruitment/img/accents/DIGIANIM_5.jpg" /><h2 class="AANM">Digital Animation</h2><p>Learn the art of visual storytelling in an<span class="hide"> authentic studio</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=DRAA&planid=DRAFTINGAR" data-transition="none"><img src="/iPad/recruitment/img/accents/DRAFTINGAR_5.jpg" /><h2 class="TRTE">Drafting &ndash; Architectural</h2><p>Influence the future of green building<span class="hide">, preparing drawings</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=ECED&planid=EARCHIEDUC" data-transition="none"><img src="/iPad/recruitment/img/accents/EARCHIEDUC_5.jpg" /><h2 class="HEHS">Early Childhood Education</h2><p>Fulfill your passion for the care, education, and<span class="hide"> development</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ELCI&planid=ELECONIN" data-transition="none"><img src="/iPad/recruitment/img/accents/ELECONIN_5.jpg" /><h2 class="TRTE">Electrical - Construction &amp; Industrial - Certificate</h2><p class="hide">Training in both construction and industrial electricity &ndash; with a...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ELCID&planid=ELECONINDI" data-transition="none"><img src="/iPad/recruitment/img/accents/ELECONINDI_5.jpg" /><h2 class="TRTE">Electrical - Construction &amp; Industrial - Diploma</h2><p class="hide">Enhance your electrical knowledge learning electrical...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ELTG&planid=ELEENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/ELEENGTECH_5.jpg" /><h2 class="TRTE">Electrical Engineering Technology</h2><p>Learn the principles in the design and safe<span class="hide"> operation of power</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=EMTN&planid=ELEMECTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/ELEMECTCN_5.jpg" /><h2 class="TRTE">Electro Mechanical Technician</h2><p>Learn the industrial mechanics and electrical<span class="hide">, electronic</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=EETN&planid=ELEENGTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/ELEENGTCN_5.jpg" /><h2 class="TRTE">Electronic Engineering Technician</h2><p>Install, maintain, troubleshoot, and repair<span class="hide"> electronic/electrical</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=EETG&planid=ELTRENTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/ELTRENTECH_5.jpg" /><h2 class="TRTE">Electronic Engineering Technology</h2><p>Design and test high-tech devices used in a variety<span class="hide"> of fields</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ESET&planid=ENERSUSENG" data-transition="none"><img src="/iPad/recruitment/img/accents/ENERSUSENG_5.jpg" /><h2 class="TRTE">Energy Sustainability Engineering Technology (ESET)</h2><p>Become highly skilled in energy management, sustainable...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=ENGAP&planid=ENGAP" data-transition="none"><img src="/iPad/recruitment/img/accents/ENGAP_5.jpg" /><h2 class="BUHS">English for Academic Purposes (EAP)</h2><p>Enhance your English language skills to prepare<span class="hide"> for your</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=ENTG&planid=ENVENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/ENVENGTECH_5.jpg" /><h2 class="TRTE">Environmental Engineering Technology</h2><p>Help protect and manage one of earth's essential<span class="hide"> resources</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=ESTH&planid=ESTHETICS" data-transition="none"><img src="/iPad/recruitment/img/accents/ESTHETICS_5.jpg" /><h2 class="HEHS">Esthetics</h2><p>Focus on all aspects of the esthetics profession in a...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=FNRL&planid=FUNSERV" data-transition="none"><img src="/iPad/recruitment/img/accents/FUNSERV_5.jpg" /><h2 class="HEHS">Funeral &amp; Allied Health Services</h2><p>Build the essential skills and knowledge you<span class="hide"> need for two</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=FUDR&planid=FUNDIRCT" data-transition="none"><img src="/iPad/recruitment/img/accents/FUNDIRCT_5.jpg" /><h2 class="HEHS">Funeral Arranging &amp; Directing</h2><p>Develop the essential skills you need to serve clients<span class="hide"> and</span>...</p></a></li>
+						<li class="letters"><a name="ghi"></a><div>ghi</div></li>
+	<li class="TRTEr"><a href="#programDetails?progid=GIAM&planid=GASINSSERV" data-transition="none"><img src="/iPad/recruitment/img/accents/GASINSSERV_5.jpg" /><h2 class="TRTE">Gas Technician</h2><p>Prepare to work in the growing field of natural<span class="hide"> gas and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=GEOS&planid=GEOSCIYR1" data-transition="none"><img src="/iPad/recruitment/img/accents/GEOSCIYR1_5.jpg" /><h2 class="TRTE">Geographic Sciences</h2><p>Obtain a solid grounding in the basics of geographic<span class="hide"> sciences</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GEOS&planid=CARTOGRAPH" data-transition="none"><img src="/iPad/recruitment/img/accents/CARTOGRAPH_5.jpg" /><h2 class="AANM">Geographic Sciences - Cartography Concentration</h2><p class="hide">Develop your visual communication skills building...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GEOS&planid=COMMENVPLN" data-transition="none"><img src="/iPad/recruitment/img/accents/COMMENVPLN_5.jpg" /><h2 class="AANM">Geographic Sciences - Community &amp; Environmental Planning Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GEOS&planid=GISTECHNO" data-transition="none"><img src="/iPad/recruitment/img/accents/GISTECHNO_5.jpg" /><h2 class="AANM">Geographic Sciences - Geographic Information Systems (GIS) Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GEOS&planid=REMSENTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/REMSENTECH_5.jpg" /><h2 class="AANM">Geographic Sciences - Remote Sensing Technology Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AGEO&planid=AGEOSEM1" data-transition="none"><img src="/iPad/recruitment/img/accents/AGEOSEM1_5.jpg" /><h2 class="AANM">Geographic Sciences &ndash; Advanced Diploma</h2><p class="hide">A post-graduate program that develops your career-ready...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AGEO&planid=AGEOGISY" data-transition="none"><img src="/iPad/recruitment/img/accents/AGEOGISY_5.jpg" /><h2 class="AANM f09em">Geographic Sciences &ndash; Advanced Diploma - Geographic Information Systems (GIS) Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AGEO&planid=AGEOGISB" data-transition="none"><img src="/iPad/recruitment/img/accents/AGEOGISB_5.jpg" /><h2 class="AANM">Geographic Sciences &ndash; Advanced Diploma - GIS for Business Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AGEO&planid=AGEOREMS" data-transition="none"><img src="/iPad/recruitment/img/accents/AGEOREMS_5.jpg" /><h2 class="AANM">Geographic Sciences &ndash; Advanced Diploma - Remote Sensing Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GETG&planid=GEOMENTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/GEOMENTECH_5.jpg" /><h2 class="AANM">Geomatics Engineering Technology</h2><p>Enhance your surveying skills and experience by<span class="hide"> developing</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GAPP&planid=GRAPROD" data-transition="none"><img src="/iPad/recruitment/img/accents/GRAPROD_5.jpg" /><h2 class="AANM">Graphic &amp; Print Production</h2><p>Learn the process and technical knowledge of<span class="hide"> the printing</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=GDES&planid=GRAPHICDES" data-transition="none"><img src="/iPad/recruitment/img/accents/GRAPHICDES_5.jpg" /><h2 class="AANM">Graphic Design</h2><p>Explore design history, typography, digital<span class="hide"> imaging</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HIMP&planid=HEINFOMAN" data-transition="none"><img src="/iPad/recruitment/img/accents/HEINFOMAN_5.jpg" /><h2 class="HEHS">Health Information Management (HIM)</h2><p>Use technology to capture the data, analysis, and...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HDTT&planid=HDEQTTREP" data-transition="none"><img src="/iPad/recruitment/img/accents/HDEQTTREP_5.jpg" /><h2 class="TRTE">Heavy Duty Equipment /Truck and Transport Repair &ndash; Certificate</h2><p>Develop entry level skills to...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HDTD&planid=HDTRUCKDIP" data-transition="none"><img src="/iPad/recruitment/img/accents/HDTRUCKDIP_5.jpg" /><h2 class="TRTE">Heavy Duty Equipment /Truck and Transport Repair &ndash; Diploma</h2><p>Develop skills and knowledge...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HEOP&planid=HEAVYEQOP" data-transition="none"><img src="/iPad/recruitment/img/accents/HEAVYEQOP_5.jpg" /><h2 class="TRTE">Heavy Equipment Operator</h2><p>Learn equipment maintenance, system<span class="hide"> operations, and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HCAR&planid=HERCARPENT" data-transition="none"><img src="/iPad/recruitment/img/accents/HERCARPENT_5.jpg" /><h2 class="TRTE">Heritage Carpentry</h2><p>Refine your carpentry skills in the areas of<span class="hide"> renovation, restoration</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HLTG&planid=HORTLANDTG" data-transition="none"><img src="/iPad/recruitment/img/accents/HORTLANDTG_5.jpg" /><h2 class="TRTE">Horticulture &amp; Landscape Technology</h2><p>Turn your love of the outdoors into a dynamic<span class="hide"> career</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HLTG&planid=HORTLANDSC" data-transition="none"><img src="/iPad/recruitment/img/accents/HORTLANDSC_5.jpg" /><h2 class="TRTE">Horticulture &amp; Landscape Technology - Landscape Concentration</h2></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=HLTG&planid=HORTOPERAT" data-transition="none"><img src="/iPad/recruitment/img/accents/HORTOPERAT_5.jpg" /><h2 class="TRTE">Horticulture &amp; Landscape Technology - Operations Concentration</h2></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=HUMT&planid=HUMRESMAN" data-transition="none"><img src="/iPad/recruitment/img/accents/HUMRESMAN_5.jpg" /><h2 class="BUHS">Human Resource Management</h2><p>Build a strong foundation in the law, legislation<span class="hide">, economics</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HUSVNOCONC" data-transition="none"><img src="/iPad/recruitment/img/accents/HUSVNOCONC_5.jpg" /><h2 class="HEHS">Human Services</h2><p>Create change in your community and enhance<span class="hide"> the quality of life</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-CHIYOU" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-CHIYOU_5.jpg" /><h2 class="HEHS">Human Services - Child &amp; Youth Care Concentration</h2><p>Get the skills you can use to help children and<span class="hide"> youth develop to</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-COMMSER" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-COMMSER_5.jpg" /><h2 class="HEHS">Human Services - Community Services Concentration</h2><p class="hide">Develop knowledge and skills to work as front line/entry level...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-CORSERV" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-CORSERV_5.jpg" /><h2 class="HEHS">Human Services - Correctional Services Concentration</h2><p class="hide">Work with adults and youth in institutional and community...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-DISABSP" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-DISABSP_5.jpg" /><h2 class="HEHS">Human Services - Disability Supports &amp; Services Concentration</h2></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-YR2OPCO" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-YR2OPCO_5.jpg" /><h2 class="HEHS">Human Services - Open Concentration</h2><p>Explore Human Services from diverse perspectives<span class="hide">, choosing</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=HUSV&planid=HS-THERREC" data-transition="none"><img src="/iPad/recruitment/img/accents/HS-THERREC_5.jpg" /><h2 class="HEHS">Human Services - Therapeutic Recreation Concentration</h2><p class="hide">Learn to use leisure activities as interventions to bring about...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=INDI&planid=INDINSTRU" data-transition="none"><img src="/iPad/recruitment/img/accents/INDINSTRU_5.jpg" /><h2 class="TRTE">Industrial Instrumentation</h2><p>Learn the skills to operate, maintain, troubleshoot<span class="hide"> and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=INDM&planid=INDMEC" data-transition="none"><img src="/iPad/recruitment/img/accents/INDMEC_5.jpg" /><h2 class="TRTE">Industrial Mechanical</h2><p>Learn how to install, repair, and maintain industrial<span class="hide"> equipment</span><span class="show">..</span>.</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-NOCONC" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-NOCONC_5.jpg" /><h2 class="AANM">Information Technology (IT)</h2><p>Develop your knowledge of computer technology<span class="hide"> and skills</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-DATAMAN" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-DATAMAN_5.jpg" /><h2 class="AANM">Information Technology (IT) - Database Administration Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-DATADEV" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-DATADEV_5.jpg" /><h2 class="AANM">Information Technology (IT) - Database Development Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-PROGRAM" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-PROGRAM_5.jpg" /><h2 class="AANM">Information Technology (IT) - Programming Concentration</h2><p class="hide">Gain the skills to analyze problems, design software...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-SYSMAN" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-SYSMAN_5.jpg" /><h2 class="AANM f1em">Information Technology (IT) - Systems Management/<wbr />Networking Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IFTG&planid=IT-INTERNT" data-transition="none"><img src="/iPad/recruitment/img/accents/IT-INTERNT_5.jpg" /><h2 class="AANM f1em">Information Technology (IT) - Web Programming Concentration</h2><p class="hide">Focus your programming skills to form a solid foundation in...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IMOG&planid=INMOGRAPHS" data-transition="none"><img src="/iPad/recruitment/img/accents/INMOGRAPHS_5.jpg" /><h2 class="AANM">Interactive &amp; Motion Graphics</h2><p>Where technology and creativity meet – design<span class="hide"> and produce</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IMOG&planid=INMO3DMOD" data-transition="none"><img src="/iPad/recruitment/img/accents/INMO3DMOD_5.jpg" /><h2 class="AANM">Interactive &amp; Motion Graphics - 3D Modeling &amp; Motion Capture Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IMOG&planid=GAMEDESDEV" data-transition="none"><img src="/iPad/recruitment/img/accents/GAMEDESDEV_5.jpg" /><h2 class="AANM">Interactive &amp; Motion Graphics - Game Design &amp; Development Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=IMOG&planid=INMOVISEFS" data-transition="none"><img src="/iPad/recruitment/img/accents/INMOVISEFS_5.jpg" /><h2 class="AANM">Interactive &amp; Motion Graphics - Visual Effects Concentration</h2></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=INTB&planid=INTERBUSIN" data-transition="none"><img src="/iPad/recruitment/img/accents/INTERBUSIN_5.jpg" /><h2 class="BUHS">International Business</h2><p>Become a global business professional developing<span class="hide"> your</span>...</p></a></li>
+						<li class="letters"><a name="jkl"></a><div>jkl</div></li>
+	<li class="HEHSr"><a href="#programDetails?progid=LWSC&planid=LAWSECURIT" data-transition="none"><img src="/iPad/recruitment/img/accents/LAWSECURIT_5.jpg" /><h2 class="HEHS">Law &amp; Security</h2><p>Prepare for a career in security – working as<span class="hide"> a protection officer</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=LBTN&planid=LIBINFTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/LIBINFTECH_5.jpg" /><h2 class="BUHS">Library &amp; Information Technology</h2><p>Develop your people skills, advanced computer skills...</p></a></li>
+						<li class="letters"><a name="mno"></a><div>mno</div></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MACSD&planid=MACSHOPDIP" data-transition="none"><img src="/iPad/recruitment/img/accents/MACSHOPDIP_5.jpg" /><h2 class="TRTE">Machining</h2><p>Develop skills to produce one-of-a-kind and<span class="hide"> manufactured</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MIRG&planid=MARINDRIG" data-transition="none"><img src="/iPad/recruitment/img/accents/MARINDRIG_5.jpg" /><h2 class="TRTE">Marine - Industrial Rigging</h2><p>Learn to manufacture, install, and repair rigging<span class="hide"> used to lift and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MAET&planid=MARENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/MARENGTECH_5.jpg" /><h2 class="TRTE">Marine Engineering Technology</h2><p>Build a broad-based knowledge of the highly<span class="hide"> complex</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MGEO&planid=MARGEOM" data-transition="none"><img src="/iPad/recruitment/img/accents/MARGEOM_5.jpg" /><h2 class="TRTE">Marine Geomatics</h2><p>Expand your geomatics knowledge with the<span class="hide"> skills you</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MANT&planid=MARNAVTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/MARNAVTECH_5.jpg" /><h2 class="TRTE">Marine Navigation Technology</h2><p>Study the major principles of marine navigation<span class="hide">, seamanship</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=METG&planid=MECENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/MECENGTECH_5.jpg" /><h2 class="TRTE">Mechanical Engineering Technology</h2><p>Learn the skills needed for engineering design<span class="hide">, fabrication</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=MLTG&planid=MEDLABTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/MEDLABTECH_5.jpg" /><h2 class="HEHS">Medical Laboratory Technology</h2><p>Perform lab testing and investigations related to<span class="hide"> the</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=MOAS&planid=MEDOFFAS" data-transition="none"><img src="/iPad/recruitment/img/accents/MEDOFFAS_5.jpg" /><h2 class="BUHS">Medical Office Administration</h2><p>A solid foundation in the technology, terminology...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=MTRAN&planid=MTRAN" data-transition="none"><img src="/iPad/recruitment/img/accents/MTRAN_5.jpg" /><h2 class="BUHS">Medical Transcription</h2><p>Become a highly skilled medical<span class="hide"> language specialist and an</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=MHRP&planid=MENTHEALTH" data-transition="none"><img src="/iPad/recruitment/img/accents/MENTHEALTH_5.jpg" /><h2 class="HEHS">Mental Health Recovery &amp; Promotion</h2><p>Work with individuals affected by mental health<span class="hide"> issues and help</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MTLFB&planid=METALFAB" data-transition="none"><img src="/iPad/recruitment/img/accents/METALFAB_5.jpg" /><h2 class="TRTE">Metal Fabrication</h2><p>Build, assemble, and repair products made of steel<span class="hide"> and</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=MHWP&planid=MIKMAWHWP" data-transition="none"><img src="/iPad/recruitment/img/accents/MIKMAWHWP_5.jpg" /><h2 class="HEHS">Mi'kmaw Health &amp; Wellness</h2><p>Explore Mi'kmaw approaches to health<span class="hide">, wellness, balance and</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=MPPR&planid=MOTOPOWER" data-transition="none"><img src="/iPad/recruitment/img/accents/MOTOPOWER_5.jpg" /><h2 class="TRTE">Motorcycle &amp; Power Products Repair</h2><p>Get the skills you need for a career to maintain<span class="hide"> and repair</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=MARTS&planid=MUSARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/MUSARTS_5.jpg" /><h2 class="AANM">Music Arts</h2><p>Prepare for an independent music career by building<span class="hide"> business</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=AMBUS&planid=ARTMUSBUS" data-transition="none"><img src="/iPad/recruitment/img/accents/ARTMUSBUS_5.jpg" /><h2 class="AANM">Music Business</h2><p>Learn the business skills needed to become an<span class="hide"> artist manager</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=NRETD&planid=NATRESETD" data-transition="none"><img src="/iPad/recruitment/img/accents/NATRESETD_5.jpg" /><h2 class="TRTE">Natural Resources Environmental Technology</h2><p>Learn practical skills and theory with a focus on<span class="hide"> environmental</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=OHSP&planid=OCHESAFETY" data-transition="none"><img src="/iPad/recruitment/img/accents/OCHESAFETY_5.jpg" /><h2 class="TRTE">Occupational Health &amp; Safety</h2><p>Turn your concern for safety into a rewarding<span class="hide"> career developing</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=OTPT&planid=OTAPTA" data-transition="none"><img src="/iPad/recruitment/img/accents/OTAPTA_5.jpg" /><h2 class="HEHS">Occupational Therapy &amp; Physiotherapy Assistant</h2><p class="hide">Work directly with clients providing hands-on treatment to...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=OFFAD&planid=OFFADMIN" data-transition="none"><img src="/iPad/recruitment/img/accents/OFFADMIN_5.jpg" /><h2 class="BUHS">Office Administration</h2><p>Develop skills and knowledge in office<span class="hide"> procedures, computer</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=OASIM&planid=OFADSIMGT" data-transition="none"><img src="/iPad/recruitment/img/accents/OFADSIMGT_5.jpg" /><h2 class="BUHS">Office Administration - Software &amp; Information Management</h2><p>Advance to the next level of Office Administration enhancing...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=OHST&planid=OILSYSTCN" data-transition="none"><img src="/iPad/recruitment/img/accents/OILSYSTCN_5.jpg" /><h2 class="TRTE">Oil Heat Systems Technician</h2><p>Install, repair, and maintain oil-fired domestic and<span class="hide"> commercial</span>...</p></a></li>
+						<li class="letters"><a name="pqr"></a><div>pqr</div></li>
+	<li class="BUHSr"><a href="#programDetails?progid=LEGA&planid=PARASERV" data-transition="none"><img src="/iPad/recruitment/img/accents/PARASERV_5.jpg" /><h2 class="BUHS">Paralegal Services</h2><p>Acquire a solid grounding in legal theory and<span class="hide"> prepare for a career</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=PHTG&planid=PHARMTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/PHARMTECH_5.jpg" /><h2 class="HEHS">Pharmacy Technology</h2><p>Work as part of a healthcare team to<span class="hide"> ensure consumers receive</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=PHOTD&planid=PHOTODIGI" data-transition="none"><img src="/iPad/recruitment/img/accents/PHOTODIGI_5.jpg" /><h2 class="AANM">Photography</h2><p>Develop your creative, technical, and business<span class="hide"> skills to produce</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=PIPE&planid=PIPETRADES" data-transition="none"><img src="/iPad/recruitment/img/accents/PIPETRADES_5.jpg" /><h2 class="TRTE">Pipe Trades</h2><p>A comprehensive and integrated program that<span class="hide"> builds skills in</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=PLMB&planid=PLUMBING" data-transition="none"><img src="/iPad/recruitment/img/accents/PLUMBING_5.jpg" /><h2 class="TRTE">Plumbing</h2><p>Learn how to install and repair water distribution<span class="hide"> and sanitary</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=PETG&planid=POWENGTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/POWENGTECH_5.jpg" /><h2 class="TRTE">Power Engineering Technology</h2><p>Prepare to meet the technical demands and<span class="hide"> take</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=PNUR&planid=PRACNURDIP" data-transition="none"><img src="/iPad/recruitment/img/accents/PRACNURDIP_5.jpg" /><h2 class="HEHS">Practical Nursing</h2><p>Work as part of a healthcare team to<span class="hide"> provide exceptional care</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=PROP&planid=PROCOPERAT" data-transition="none"><img src="/iPad/recruitment/img/accents/PROCOPERAT_5.jpg" /><h2 class="TRTE">Process Operations &ndash; 4th Class Power Engineering</h2><p>Develop an understanding of processing<span class="hide"> equipment and</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=PURE&planid=PUBRELAT" data-transition="none"><img src="/iPad/recruitment/img/accents/PUBRELAT_5.jpg" /><h2 class="BUHS">Public Relations</h2><p>Become a skilled communicator &ndash; defining<span class="hide"> objectives, developing</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=RTAT&planid=RADTELARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/RADTELARTS_5.jpg" /><h2 class="AANM">Radio &amp; Television Arts</h2><p>Develop the knowledge and skills you need to<span class="hide"> work behind the</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=RTAT&planid=RT-JOURNAL" data-transition="none"><img src="/iPad/recruitment/img/accents/RT-JOURNAL_5.jpg" /><h2 class="AANM">Radio &amp; Television Arts - Broadcast Journal Concentration</h2><p class="hide">Develop your expertise writing, reporting, and reading the news...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=RTAT&planid=RT-RADIO" data-transition="none"><img src="/iPad/recruitment/img/accents/RT-RADIO_5.jpg" /><h2 class="AANM">Radio &amp; Television Arts - Radio Performance &amp; Studio Production Concentration</h2></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=RTAT&planid=RT-TELEV" data-transition="none"><img src="/iPad/recruitment/img/accents/RT-TELEV_5.jpg" /><h2 class="AANM">Radio &amp; Television Arts - Television Production Concentration</h2><p class="hide">Develop skills you need to work in the fast-paced world of...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=SOUN&planid=RECORDARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/RECORDARTS_5.jpg" /><h2 class="AANM">Recording Arts</h2><p>Learn the technical and creative skills required<span class="hide"> to be a</span>...</p></a></li>
+	<li class="HEHSr"><a href="#programDetails?progid=RECL&planid=RECLEAD" data-transition="none"><img src="/iPad/recruitment/img/accents/RECLEAD_5.jpg" /><h2 class="HEHS">Recreation Leadership</h2><p>Promote active living and build the skills you need<span class="hide"> to organize</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=RFAC&planid=REFAIRCOND" data-transition="none"><img src="/iPad/recruitment/img/accents/REFAIRCOND_5.jpg" /><h2 class="TRTE">Refrigeration &amp; Air Conditioning</h2><p>Learn a variety of skills in mechanical systems<span class="hide">, electrical</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=GEOTH&planid=GEOTHERMAL" data-transition="none"><img src="/iPad/recruitment/img/accents/GEOTHERMAL_5.jpg" /><h2 class="TRTE">Refrigeration &amp; Air Conditioning - Geothermal</h2><p>Learn a variety of skills in mechanical systems...</p></a></li>
+						<li class="letters"><a name="stu"></a><div>stu</div></li>
+	<li class="AANMr"><a href="#programDetails?progid=SART&planid=SCREENARTS" data-transition="none"><img src="/iPad/recruitment/img/accents/SCREENARTS_5.jpg" /><h2 class="AANM">Screen Arts</h2><p>Write a script, design and construct a set, shoot<span class="hide"> and edit</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=SFPF&planid=STEAMPIPE" data-transition="none"><img src="/iPad/recruitment/img/accents/STEAMPIPE_5.jpg" /><h2 class="TRTE">Steamfitting/<wbr />Pipefitting</h2><p>Learn how to install, repair and maintain heating<span class="hide">, cooling</span>...</p></a></li>
+	<li class="AANMr"><a href="#programDetails?progid=SUTN&planid=SURVTECH" data-transition="none"><img src="/iPad/recruitment/img/accents/SURVTECH_5.jpg" /><h2 class="AANM">Survey Technician</h2><p>Develop skills in the surveying profession<span class="hide">. Embark in a</span>...</p></a></li>
+	<li class="BUHSr"><a href="#programDetails?progid=TMAN&planid=TMAN-Y1" data-transition="none"><img src="/iPad/recruitment/img/accents/TMAN-Y1_5.jpg" /><h2 class="BUHS">Tourism Management</h2><p>Prepare for management and leadership roles in<span class="hide"> 5 Sectors</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=UTLW&planid=UTILLINWRK" data-transition="none"><img src="/iPad/recruitment/img/accents/UTILLINWRK_5.jpg" /><h2 class="TRTE">Utility Line Work-Construction &amp; Maintenance</h2><p>Build your knowledge of the systems and<span class="hide"> computer controls</span>...</p></a></li>
+						<li class="letters"><a name="vwx"></a><div>vwx</div></li>
+	<li class="TRTEr"><a href="#programDetails?progid=WLDD&planid=WELDINGDIP" data-transition="none"><img src="/iPad/recruitment/img/accents/WELDINGDIP_5.jpg" /><h2 class="TRTE">Welding</h2><p>Learn to repair metal parts and structures, fabricate...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=CWEL&planid=CERTWELD" data-transition="none"><img src="/iPad/recruitment/img/accents/CERTWELD_5.jpg" /><h2 class="TRTE">Welding &ndash; Certified</h2><p>Develop skills to repair metal parts and<span class="hide"> structures as well</span>...</p></a></li>
+	<li class="TRTEr"><a href="#programDetails?progid=WIQD&planid=WELDINSQUA" data-transition="none"><img src="/iPad/recruitment/img/accents/WELDINSQUA_5.jpg" /><h2 class="TRTE">Welding Inspection &amp; Quality Control</h2><p>Advance your welding knowledge and skills in<span class="hide"> order to perform</span>...</p></a></li>
+						<li class="letters"><a name="yz"></a><div>yz</div></li>
+					</ul>
+				</div>
+
+			</div>				
+			<div class="clear footerfix"></div>
+			<!-- Footer -->
+			<footer data-position="fixed" data-fullscreen="true">
+				<ul class="icn-nav">
+					<li><a href="#landingPage" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-home.png" alt="" id="home" /></a></li>
+					<li><a href="#programsAtoZ" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-az.png" alt="" id="az" /></a></li>
+					<li><img src="/iPad/recruitment/img/designelements/btn-comment.png" alt="" id="comment" /></li>
+					<li><img src="/iPad/recruitment/img/designelements/btn-share.png" alt="" id="share" /></li>
+				</ul>
+			</footer>	
+
+		</div>
+		<!-- =============================================== -->
+		
+
+		<!-- =============================================== -->
+		<!-- Search Results -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="searchResults" data-title="NSCC Program Guide - Search Results">
+			<!-- Header -->
+			<header class="top" data-position="fixed" data-fullscreen="true">
+				<h1>NSCC Programs</h1>
+				<a href="#" id="hlSearch" class="search-btn">Search</a>
+			</header>	
+			<div class="clear headerfix"></div>
+			
+			<div class="srch-az"><span class="results"><strong>Search Results:</strong> <span id="searchResultsQuery"></span></span><span class="srch-az-num">(<span id="searchResultsCount"></span> Programs)</span></div>	
+			
+			<div class="" data-role="content">
+
+				<table cellspacing="0" cellpadding="0" id="searchResultsContainer">					
+					<thead valign="top">
+						<th>Program</th>
+						<th class="tbl-length">Length</th>
+						<th class="tbl-credential">Credential</th>
+						<th>&nbsp;</th>
+					</thead>
+					<tbody>
+					</tbody>				
+				</table>
+
+			</div>
+			
+			<!--<a class="btnBackToLanding" href="" data-role="button" data-icon="back">Back</a>-->
+			<div class="clear"></div>
+			<!-- Footer -->
+			<footer data-position="fixed" data-fullscreen="true">
+			<ul class="icn-nav">
+					<li><a href="#landingPage" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-home.png" alt="" id="home" /></a></li>
+					<li><a href="#programsAtoZ" data-transition="none"><img src="/iPad/recruitment/img/designelements/btn-az.png" alt="" id="az" /></a></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-comment.png" alt="" id="comment" /></li>
+				<li><img src="/iPad/recruitment/img/designelements/btn-share.png" alt="" id="share" /></li>
+			</ul>
+			</footer>	
+		</div>
+		<!-- =============================================== -->
+
+		<!-- =============================================== -->
+		<!-- General purpose dialog -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="generalDialog">
+			<div data-role="content">		
+				My Dialog
+			</div>
+		</div>
+
+
+		<!-- =============================================== -->
+		<!-- 'Web' view (iframe) -->
+		<!-- =============================================== -->		
+		<div data-role="page" id="webview" data-title="NSCC Program Guide - Web view">
+			<div data-role="content">		
+				<a id="webviewBack" href="#programDetails" data-transition="none">Back</a>
+				<iframe id="webviewIframe" src="" width="600" frameborder="0" marginheight="0"></iframe>				
+			</div>
+		</div>
+
+
+
+		<!-- =============================================== -->
+		<!-- Used as a popup among 'pages', absolute positioned -->
+		<!-- =============================================== -->	
+		<span id="popupSearchArrow" class="srch-arrow"></span>
+		<div id="popupPanel" class="searchPanel">
+								
+			<div class="panel-hdr"><span class="btn-back"><a href="#" id="hlSearchGoBack" style="display: none;">Back</a></span><span class="srch-panel-title">Select</span><a href="#" id="hlCloseSearch">Close</a></div>			
+			
+			<div id="subPanelSearch" class="search-box">
+				<input type="text" id="tbTextSearch" placeholder="Search" />	
+			</div>
+			
+			<div id="subPanelMain" class="searchSubPanel" style="left: 0%;">
+				<ul>
+					<li id="hlSchoolSearch">Schools<span class="arrow"></span><span class="count">5</span><span class="block blue"></span><span class="block orange"></span><span class="block green"></span><span class="block red"></span><span class="block yellow"></span></li>
+					<li id="hlLocationSearch">Locations<span class="arrow"></span><span class="count">13</span></li>
+					<li id="hlProgramsAtoZ"><a href="#programsAtoZ" data-transition="none">Programs A-Z</a><span class="arrow"></span><span class="count">143</span></li>
+				</ul>
+			</div>
+			
+			<div id="subPanelSchoolSearch" class="searchSubPanel">
+				<ul>
+					<li data-lnk="#searchResults?type=S&query=SCAC">School of Access<span class="arrow"></span><span class="count">3</span><span class="block blue"></span></li>
+					<li data-lnk="#searchResults?type=S&query=AANM">School of Applied Arts &amp; New Media<span class="arrow"></span><span class="count">38</span><span class="block orange"></span></li>
+					<li data-lnk="#searchResults?type=S&query=BUHS">School of Business<span class="arrow"></span><span class="count">21</span><span class="block green"></span></li>
+					<li data-lnk="#searchResults?type=S&query=HEHS">School of Health &amp; Human Services<span class="arrow"></span><span class="count">26</span><span class="block red"></span></li>
+					<li data-lnk="#searchResults?type=S&query=TRTE">School of Trades &amp; Technology<span class="arrow"></span><span class="count">55</span><span class="block yellow"></span></li>
+				</ul>
+			</div>
+
+			<div id="subPanelLocationSearch" class="searchSubPanel">
+				<ul>
+					<li data-lnk="#searchResults?type=L&query=AKERL">Akerley Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=ANNAP">Annapolis Valley Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=BURRI">Burridge Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=CUMBE">Cumberland Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=INSTI">Institute of Technology Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=KINGS">Kingstec Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=LUNEN">Lunenburg Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=MARCO">Marconi Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=PICTO">Pictou Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=SHELB">Shelburne Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=STRAT">Strait Area Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=TRURO">Truro Campus<span class="arrow"></li>
+					<li data-lnk="#searchResults?type=L&query=WATER">Waterfront Campus<span class="arrow"></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+		<!-- =============================================== -->
+
+
+		<div id="popupContent" style="display:none;">
+			<div class="content-popup">
+				<iframe width="464" height="291" src="http://www.youtube.com/embed/vCXvVJ_aZ_I?rel=0&showinfo=0" frameborder="0"></iframe>
+				<h1></h1>
+				<div class="related-progs">
+				<h2>Related Programs</h2>
+				<ul id="popupContentRelated">
+				</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	
+</html>

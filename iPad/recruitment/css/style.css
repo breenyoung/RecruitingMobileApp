@@ -1,0 +1,309 @@
+@font-face {
+    font-family: 'TeXGyreHerosCnRegular';
+    src: url('/iPad/recruitment/fonts/texgyreheroscn-regular-webfont.eot');
+    src: url('/iPad/recruitment/fonts/texgyreheroscn-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/iPad/recruitment/fonts/texgyreheroscn-regular-webfont.ttf') format('truetype'),
+         url('/iPad/recruitment/fonts/texgyreheroscn-regular-webfont.svg#TeXGyreHerosCnRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body { margin: 0 0 56px; font-family: HelveticaNeue, sans-serif; font-size: 1.2em; position: relative; min-height: 100%; }
+html { }
+h1 { margin: 0; padding: 0 0 10px 0; }
+.clear { clear: both; }
+
+
+/* Condensed Fonts */
+
+.prog-info, .prog-highlights, .locations, .srch-az, .az-list, table, .arrow, .fancybox-inner { font-family: TeXGyreHerosCnRegular; }
+
+/* jquery mobile overrides */
+
+.ui-body-c .ui-link { color: #0d4c82; }
+.ui-content { padding: 0; }
+.ui-body-c, .ui-overlay-c { text-shadow: none; }
+a.web, .ui-link a.web { color: #fff!important; }
+.ui-body-c, .ui-dialog.ui-overlay-c { background-color: #fff; background-image: none; }
+
+/* lightbox */
+
+.content-popup { padding: 25px 0 0 0; }
+.fancybox-skin { padding: 15px; }
+.fancybox-inner h1 { font-size: 1.3em; margin: 0; padding: 5px 0 10px 0; color: #000; font-weight: normal; }
+.fancybox-inner h2 { font-weight: normal; color: #000; font-size: 1.1em; margin: 0; padding: 10px 0 0 0; }
+.related-progs { background-color: #e6e6e6; margin: 0; padding: 0 20px 10px 10px; width: 434px; }
+.related-progs  ul { list-style-type: none; margin: 0; padding: 0 0 10px 0; }
+.related-progs  ul li { color: #000; margin: 0; padding: 0; font-size: 1em; line-height: 1em; }
+.fancybox-close { width: 39px; height: 39px; right: -14px; top: -10px; background-image: url(/iPad/recruitment/img/designelements/close.png); }
+
+/* search pop up */
+
+.panel-hdr { height: 38px; }
+#hlCloseSearch { float: right; color: #fff; text-decoration: none; font-weight: normal; padding: 7px 0 0 13px; margin: 2px 5px 0 0; background: url(/iPad/recruitment/img/designelements/btn-srch-close.png) no-repeat; font-size: 0.75em; width: 48px; height: 24px; }
+#hlSearchGoBack { color: #fff; text-decoration: none;  margin: 2px 5px 0 5px; background: url(/iPad/recruitment/img/designelements/btn-back.png) no-repeat; font-size: 0.75em; width: 42px; height: 27px; padding: 6px 0 0 15px; float: left; }
+.btn-back { float: left; width: 48px; height: 24px; }
+.searchSubPanel { background-color: #fff; -webkit-border-radius: 0 0 5px 5px; border: 1px solid #2f394b; margin: 0 0 5px 5px; }
+.searchSubPanel ul { list-style-type: none; margin: 0; padding: 0 0 8px 0; } 
+.searchSubPanel ul li { border-bottom: 1px solid #e5e2e2; padding: 8px 0 8px 8px; font-weight: bold; font-size: 0.9em;}
+.searchSubPanel ul li { color: #000; text-decoration: none; display: block; }
+.searchSubPanel ul li a { color: #000; text-decoration: none; }
+.searchSubPanel .count { float: right; }
+.searchSubPanel ul li .arrow { float: right; padding: 7px 25px 0 0; background: url(/iPad/recruitment/img/designelements/arrow.png) no-repeat 50% 50%; height: 17px; position: relative; }
+.searchSubPanel ul li .block { float: right; height: 19px; width: 19px; }
+/* offset access number */
+.searchSubPanel ul li .blue { margin-right: 14px; }
+.srch-arrow { background: url(/iPad/recruitment/img/designelements/srch-arrow.gif) no-repeat; width: 39px; height: 19px; z-index: 6; top: 64px; right: 18px; position: fixed; }
+#popupPanel { width: 400px; border: 1px solid #001221; float: right; right: 15px; top: 82px; background: url(/iPad/recruitment/img/designelements/bg-search-panel.jpg) repeat-x; -webkit-border-radius: 5px; padding: 5px; z-index: 5; position: fixed; }
+.srch-panel-title { color: #fff; float: left; margin: 4px 0 0 10px; text-align: center; font-weight: bold; display: block; width: 240px; }
+.search-box { background: url(/iPad/recruitment/img/designelements/bg-search.png) repeat-x; height: 40px; -webkit-border-radius: 5px 5px 0 0; border: 1px 1px 0 1px solid #2f394b; margin: 1px 1px 0 1px; }
+.search-box input { background: url(/iPad/recruitment/img/designelements/icn-search.png) no-repeat 5px 6px #fcfcfc; border: 1px solid #d1d1d1; width: 343px; padding: 6px 15px 6px 25px; -webkit-border-radius: 13px; -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset; -webkit-transition: all 0.7s ease 0s; transition: all 0.7s ease 0s; margin: 5px 0 0 7px; font-size: 0.7em; }
+.search-btn { width: 63px; height: 51px; margin-top: 18px; background: url(/iPad/recruitment/img/designelements/btn-search.png) repeat-y; float: right; position: relative; text-indent: -99999px; }
+
+/* header */
+
+header { position: fixed; top: 0; left: 0; width: 100%; z-index: 4; display: block; }
+.headerfix { margin-top: 89px; }
+.top h1 { color: #fff; font-size: 2.9em; float: left; }
+h2.list-hdr { color: #4b4b4b; background-color: #ececec; padding: 10px 10px 10px 20px; font-size: 1.9em; margin: 0 0 5px 0; }
+
+/* landing page */
+
+.gal-index { list-style-type: none; margin: 0; padding: 0; }
+.gal-index li { width: 221px; height: 235px; margin: 0; padding: 0; display: inline; float: left; position: relative; margin: 13px 14px 0 0; z-index: 2; }
+.gal-index li:first-child { width: 456px; height: 235px; }
+.gal-caption { position: absolute; bottom: 0; left: 0; width: 100%; background-color: #4b4b4b; }
+.gal-caption h3 { margin: 0; padding: 8px 5px 8px 16px; color: #fff; font-size: 1.3em; font-weight: normal; float: left; }
+.school-blocks { list-style-type: none; margin: -2px 5px 0 0; padding: 0; float: right; position: relative; }
+.double .school-blocks { margin: 28px 5px 0 0; }
+.school-blocks li { width: 24px; height: 24px; margin-right: 5px; padding: 0; border: 1px #fff solid; }
+.school-blocks li:first-child { width: 24px; height: 24px; }
+.block { width: 24px; height: 24px; margin: 0 5px 0 0; padding: 0; border: 1px #fff solid; float: left; }
+.orange { background-color: #f78c2a; }
+.yellow { background-color: #fec828; }
+.green { background-color: #56b74c; }
+.red { background-color: #ed2b29; }
+.blue { background-color: #008da8; }
+
+/* footer */
+
+footer { background-color: #e9e8e9; height: 56px; padding-left: 36px; left: 0; bottom: 0; position: fixed; z-index: 6; display: block; }
+.icn-nav li { padding-right: 18px; display: inline; }
+#comment { margin-bottom: -5px; }
+.footerfix { height: 70px; }
+#updateData { float: right; margin: -2px 45px 0 0; }
+/* hide buttons not used yet */
+#comment, #share { display: none; }
+
+/* program info */
+
+.prog-info h1 { font-weight: bold; line-height: 1em; font-size: 1.9em; padding: 0 0 2px 0; margin-top: 0; z-index: 1; }
+.prog-img { float: left; overflow: hidden; margin-bottom: 10px; }
+.btn-more { width: 47px; height: 47px; background: url(/iPad/recruitment/img/designelements/btn-more.png) repeat-y; float: right; position: relative; z-index: 3; padding: 0; display: block; }
+.quick-facts { list-style-type: none; margin: 0; padding: 0; }
+.quick-facts li { display: inline; padding-right: 5px; }
+.quick-facts li:after { content: " | "; display: inline-block; margin: 0 0 0 .5em; }
+.quick-facts li:last-child:after { content: " "; }
+.tagline p { margin: 0; padding: 0; }
+.admission-reqs { list-style-type: none; margin: 0 0 8px 0; padding: 0; }
+.admission-reqs li { display: inline; }
+.admission-reqs li:first-child { background-color: #4e4c4d; color: #fff; padding: 5px 8px 4px 8px; margin: -6px 1px 30px 0; }
+#detailProgSchool { float: left; position: relative; z-index: 1; margin: 0 10px 0 0; }
+#detailProgSchool .SCAC, #detailProgSchool .AANM, #detailProgSchool .BUHS, #detailProgSchool .HEHS, #detailProgSchool .TRTE { background-position: 100% 60%; background-repeat: no-repeat; padding-right: 30px; }
+#detailProgSchool .SCAC { background-image: url(/iPad/recruitment/img/designelements/bg-SCAC-lrg.gif); }
+#detailProgSchool .AANM { background-image: url(/iPad/recruitment/img/designelements/bg-AANM-lrg.gif); }
+#detailProgSchool .BUHS { background-image: url(/iPad/recruitment/img/designelements/bg-BUHS-lrg.gif); }
+#detailProgSchool .HEHS { background-image: url(/iPad/recruitment/img/designelements/bg-HEHS-lrg.gif); }
+#detailProgSchool .TRTE { background-image: url(/iPad/recruitment/img/designelements/bg-TRTE-lrg.gif); }
+.web{ background-image: url(/iPad/recruitment/img/designelements/web.png); background-position: 100% 60%; background-repeat: no-repeat; text-indent: -99999px; padding: 0 25px 0 25px; margin-left: 5px; }
+
+/* highlights */
+
+.num-highlights { list-style-type: none; padding: 0; font-size: 0.9em; } 
+.num-highlights li { position: relative; margin-left: 10px; padding: 0 0 0 50px; min-height: 55px; }
+.ph-one { background: url(/iPad/recruitment/img/designelements/num-01.jpg) 0 3px no-repeat; }
+.ph-two { background: url(/iPad/recruitment/img/designelements/num-02.jpg) 0 3px no-repeat; }
+.ph-three { background: url(/iPad/recruitment/img/designelements/num-03.jpg) 0 3px no-repeat; }
+
+/* locations and map */
+
+.locations h1 { color: #fff; background-color: #4e4c4d; font-family: HelveticaNeue; font-weight: normal; font-size: 1.1em; padding: 3px 0 3px 14px; }
+.locations ul { list-style-type: none; margin: 0; font-size: 0.9em; }
+
+/* image triad */
+.prog-gallery li:last-child { padding-right: 0; }
+
+/* a-z */
+.srch-az { height: 44px; background: url(/iPad/recruitment/img/designelements/bg-searchbar.gif) repeat-x; color: #53565d; position: fixed; top: 89px; left: 0; width: 100%; z-index: 5; }
+.srch-az strong { color: #3e8407; }
+.results { float: left; padding: 8px 0 0 36px; }
+.srch-az-num { float: right; padding: 10px 25px 0 0; font-size: 0.85em; }
+
+/*.az-group 
+{ 
+	list-style-type: none; margin: 0; 
+	padding: 14px 0 14px 36px; height: 30px; 
+	border-bottom: 1px solid #e2e2e2; 
+	top: 133px; left: 0; width: 100%; z-index: 5; background-color: #fff; position: fixed;  
+}*/
+
+.az-group { list-style-type: none; margin: 0; padding: 18px 0 14px 36px; height: 32px; border-bottom: 1px solid #e2e2e2; position: fixed; float: left; top: 133px; left: 0; width: 100%; z-index: 5; background-color: #fff; }
+.az-group li:last-child { display: inline; padding-right: 0; }
+.az-group li a, .ui-body-c .az-group li a.ui-link { background-color: #bebebe; color: #0d4c82; text-transform: uppercase; text-decoration: none; font-weight: bold; letter-spacing: 3px; -webkit-border-radius: 5px; font-family: HelveticaNeue-UltraLight; font-size: 1.2em; text-shadow: none;}
+.az-group li a:active, .ui-body-c .az-group li a.ui-link:active { background-color: #4a4a4a; color: #fff; }
+.az-list { list-style-type: none; margin: 115px 18px 32px 12px; padding: 0; z-index: 3; }
+.az-list li { margin: 11px 0 0 11px; display: block; height: 127px; background-color: #333333; color: #fff; float: left; position: relative; padding: 8px 0 0 0; z-index: 3; overflow: hidden; }
+.az-list .letters { background-color: #ececec; color: #4a4a4a; text-transform: uppercase; font-weight: bold; letter-spacing: 20px;  font-family: HelveticaNeue, sans-serif; }
+.az-list img { width: 132px; height: 135px; float: left; padding-right: 15px; margin-top: -8px; }
+.az-list h2 { font-size: 1.1em; margin: 0 0 6px 0; line-height: 1.1em; display: inline; }
+.az-list h2.f1em { font-size: 1em; }
+.az-list h2.f09em { font-size: 0.9em; }
+.SCAC, .AANM, .BUHS, .HEHS, .TRTE { background-position: 100% 60%; background-repeat: no-repeat; padding-right: 25px; }
+.SCAC { background-image: url(/iPad/recruitment/img/designelements/bg-scac.gif); }
+.AANM{ background-image: url(/iPad/recruitment/img/designelements/bg-aanm.gif); }
+.BUHS { background-image: url(/iPad/recruitment/img/designelements/bg-buhs.gif); }
+.HEHS { background-image: url(/iPad/recruitment/img/designelements/bg-hehs.gif); }
+.TRTE { background-image: url(/iPad/recruitment/img/designelements/bg-trte.gif); }
+.az-list li a:link, .az-list li a:link.ui-link { color: #fff; text-decoration: none; display: inline-block; height: 100%; width: 100%; font-weight: bold; }
+.az-list li.SCACr:active, .az-list li.SCACr:active a.ui-link { background-color: #008da8; color: #fff; }
+.az-list li.AANMr:active, .az-list li.AANMr:active a.ui-link { background-color: #f78c2a; color: #fff; }
+.az-list li.BUHSr:active, .az-list li.BUHSr:active a.ui-link { background-color: #56b74c; color: #fff; }
+.az-list li.HEHSr:active, .az-list li.HEHSr:active a.ui-link { background-color: #ed2b29; color: #fff; }
+.az-list li.TRTEr:active, .az-list li.TRTEr:active a.ui-link { background-color: #ffc519; color: #fff; }
+.az-list li a:visited, .az-list li a.ui-link:visited { color: #fff; }
+.az-list li.letters a { display: inline; }
+.az-list p { margin: 0; padding: 0 10px 0 0; font-size: 0.85em; line-height: 1.2em; font-weight: normal; }
+
+/* school search */
+
+table { padding: 0; width: 100%; margin: 44px 0 57px 0; }
+th { text-align: left; background-color: #53565d; color: #fff; padding: 7px 0 7px 0; }
+th:first-child, td:first-child { padding-left: 36px; }
+td:first-child { color: #0361b2; }
+td { font-size: 0.95em; border-bottom: 1px #d7d7d7 solid; padding: 9px 0 9px 4px; }
+table:last-child { border-bottom: none; }
+td:last-child { background-image: url(/iPad/recruitment/img/designelements/plus.gif); background-position: 50% 50%; background-repeat: no-repeat; }
+tr:nth-child(odd) { background-color: #f8f8f8; }
+tr:nth-child(even) { background-color: #fff; }
+table .AANM, table .SCAC, table .BUHS, table .HEHS, table .TRTE { background-position: 100% 60%; background-repeat: no-repeat; padding-right: 25px; }
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+
+.splash { height: 1024px; width: 770px; background: url(/iPad/recruitment/img/splash-portrait.jpg) no-repeat; margin: 0; padding: 0; }  
+
+.show { display: none; } /* needed to show text in landscape only */
+.list-wrapper { margin: 107px 25px 56px 36px; padding: 0; }  
+  
+/* header */
+header { }
+.top { height: 89px; background: #004f92 url(/iPad/recruitment/img/designelements/bg-header.jpg) repeat-y; }
+.top h1 { padding: 10px 10px 10px 40px; }
+h2.list-hdr { width: 4.95em; }
+
+/* footer */
+
+footer { width: 732px; }
+.icn-nav { list-style-type: none; margin: 12px 0 0 3px; padding: 0; }
+
+/* program info */
+
+.prog-info { border-bottom: 1px solid #d8d8d8; padding-bottom: 12px; }
+.prog-img img{ width: 694px; height: 320px; margin: 0 0 -56px 0; }
+.btn-more { margin: -35px 30px 0 0; }
+.tagline { font-size: 1.2em; padding: 6px 0 17px 0; }
+
+/* highlights */
+
+.prog-highlights h1 { font-family: HelveticaNeue; font-weight: normal; font-size: 1.4em; padding-bottom: 2px; display: inline; padding-right: 10px; }
+.prog-highlights { float: left; width: 428px; margin: 15px 0; border-right: 1px solid #d8d8d8; padding-right: 15px; }
+.num-highlights { margin: 0; } 
+
+/* locations and map */
+
+.locations { float: left; position: relative; width: 235px; margin-top: 18px; padding-left: 18px; }
+.locations ul { padding: 9px 0 18px 15px; }
+.locations img { width: 235px; height: 183px; }
+
+/* image triad */
+
+.prog-gallery { list-style-type: none; margin: 0; padding: 23px 0 0 0; border-top: 1px solid #d8d8d8; }
+.prog-gallery li { display: inline; padding-right: 11px; float: left; }
+.prog-gallery img { width: 135px; height: 143px; }
+
+/* a-z */
+
+.az-group li { display: inline; padding-right: 12px; }
+.az-group li a, .ui-body-c  .az-group li a.ui-link { padding: 5px 9px 5px 9px; }
+.az-list li { width: 355px; }
+.az-list .letters { font-size: 6em; }
+.az-list .letters div { margin: -15px 0 0 30px; }
+
+/* school search */
+
+th:last-child, td:last-child { width: 35px; text-align: center; }
+.tbl-credential { width: 185px; }
+.tbl-length { width: 100px; }
+.tbl-school { width: 60px; }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+
+.splash { height: 760px; width: 1024px; background: url(/iPad/recruitment/img/splash-landscape.jpg) no-repeat; margin: 0; padding: 0; }
+
+.hide { display: none; }
+.list-wrapper { margin: 107px 25px 32px 36px; padding: 0; }
+
+/* header */
+
+header {  }
+.top { height: 89px; background: #004f92 url(/iPad/recruitment/img/designelements/bg-header-landscape.jpg) repeat-y; }
+.top h1 { padding: 12px 10px 10px 40px; }
+h2.list-hdr { width: 177px; }
+
+/* footer */
+
+footer { width: 987px; }
+.icn-nav { list-style-type: none; margin: 15px 0 0 3px; padding: 0; }
+
+/* program info */
+
+.prog-info { border-right: 1px solid #d8d8d8; padding-right: 18px; float: left; width: 584px; height: 100%; }
+.prog-img img { width: 694px; height: 320px; margin: 0 -110px 0 0; }
+.btn-more { margin: -38px 32px 0 0; }
+.tagline { font-size: 1.05em; padding: 6px 0 13px 0; }
+
+/* highlights */
+
+.prog-highlights h1 { font-family: HelveticaNeue; font-weight: normal; font-size: 1.4em; }
+.prog-highlights { width: 340px; margin: 0 0 0 17px; padding-bottom: 2px; float: left; position: relative; }
+.num-highlights { margin: 0 0 8px 0; } 
+
+/* locations and map */
+
+.locations { float: left; position: relative; width: 340px; margin: 6px 0 0 -1px; padding: 10px 0 0 18px; border-left: 1px solid #d8d8d8; }
+
+.locations ul { padding: 9px 0 18px 0; }
+.locations img { width: 339px; height: 264px; }
+
+/* image triad */
+
+.prog-gallery { list-style-type: none; margin: 0; padding: 18px 0 15px 0; border-top: 1px solid #d8d8d8; border-bottom: 1px solid #d8d8d8; float: left; position: relative; }
+.prog-gallery li { display: inline; padding-right: 8px; }
+.prog-gallery li img{ width: 108px; height: 114px; }
+
+/* a-z */
+
+.az-group li { display: inline; padding-right: 14px; }
+.az-group li a, .ui-body-c .az-group li a.ui-link { padding: 5px 22px 5px 22px; }
+.az-list li { width: 318px; }
+.az-list .letters { font-size: 5em; }
+.az-list .letters div { margin: 0px 0 0 37px; }
+
+/* school search */
+
+th:last-child, td:last-child { width: 5%; text-align: center; }
+td:first-child { width: 40%; }
+.tbl-credential { width: 28%; }
+.tbl-length { width: 12%; }
+.tbl-school { width: 15%; }
+}
